@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case PERMISSION_STORAGE_CODE: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(this, "Permission Accepted...!", Toast.LENGTH_SHORT).show();
                     //permission granted from popup, perform donwload
                     startDownloading();
                 }
