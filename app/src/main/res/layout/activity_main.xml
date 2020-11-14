@@ -14,7 +14,7 @@
             android:id="@+id/urlEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/enter_url"/>
+            android:hint="@string/enter_url"/>
 
 <!--Button: download file from url-->
     <Button
