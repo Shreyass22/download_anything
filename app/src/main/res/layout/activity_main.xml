@@ -10,13 +10,16 @@
 
     <!--Edittext: input url-->
 
+    <!--Button: download file from url-->
+
     <EditText
         android:id="@+id/urlEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/downloadUrl"
+        android:layout_marginBottom="80dp"
         android:hint="@string/enter_url" />
 
-    <!--Button: download file from url-->
     <Button
         android:id="@+id/downloadUrl"
         android:layout_width="wrap_content"
