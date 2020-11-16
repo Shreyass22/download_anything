@@ -73,24 +73,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//            NotificationChannel channel = new NotificationChannel("Notification", "Notification", NotificationManager.IMPORTANCE_DEFAULT);
-//            NotificationManager manager = getSystemService(NotificationManager.class);
-//            manager.createNotificationChannel(channel);
-//        }
-//
-//        downloadUrl.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-//                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
-//                } else {
-//                    startDownloading();
-//                }
-//
-//            }
-//        });
-
     }
 
     private class DownloadFile extends AsyncTask<String, String, String> {
@@ -163,8 +145,6 @@ public class MainActivity extends AppCompatActivity {
                 .setContentText("Thank you for downloading.")
                 .setAutoCancel(true);
 
-        //NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        //notificationManager.notify(0, builder.build());
         NotificationManagerCompat managerCompat =  NotificationManagerCompat.from(MainActivity.this);
         managerCompat.notify(0, builder.build());
 
