@@ -73,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("Notification", "Notification", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+
     }
 
     private class DownloadFile extends AsyncTask<String, String, String> {
@@ -164,7 +170,8 @@ public class MainActivity extends AppCompatActivity {
 
         request.allowScanningByMediaScanner();
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, ""+ System.currentTimeMillis()+ "." + fileExtension); // get current timestamp  as file name
+        // get current timestamp  as file name
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, ""+ System.currentTimeMillis()+ "." + fileExtension);
 
         //get download service and enque file
         DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
